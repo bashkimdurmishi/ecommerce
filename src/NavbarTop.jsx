@@ -39,20 +39,20 @@ export default function NavbarTop() {
             {userContext.user.isLoggedIn &&
             userContext.user.currentUserRole === "user" ? (
               <>
-                <li className="nav-item">
+                <li className="nav-item position-relative me-3">
                   <NavLink
-                    className="nav-link position-relative"
+                    className="nav-link "
                     aria-current="page"
                     to="/dashboard"
                     activeClassName="active"
                   >
                     <i className="fa fa-dashboard"></i> Dashboard
-                    <span className="order-number position-absolute top-10 start-100 translate-middle badge rounded-pill bg-danger ">
+                    <span className="order-number position-relative top-10 start-10 translate-middle badge rounded-pill bg-danger ">
                       {userContext.user.currentUserOrders}
                     </span>
                   </NavLink>
                 </li>
-                <li className="nav-item ms-3">
+                <li className="nav-item">
                   <NavLink
                     className="nav-link"
                     aria-current="page"
@@ -103,7 +103,7 @@ export default function NavbarTop() {
             )}
 
             <div style={{ position: "absolute", right: 70 }}>
-              <ul className="navbar-nav">
+              <ul className="navbar-nav d-flex">
                 {userContext.user.isLoggedIn ? (
                   <li className="nav-item dropdown">
                     <a

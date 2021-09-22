@@ -37,7 +37,7 @@ const ProductsPageAdmin = (props) => {
 
         //Fetch Products from DB
         let productsResponse = await fetch(
-          `https://api.npoint.io/2210873b5c32eb592634/products?productName_like=${search}`,
+          `http://localhost:5000/products?productName_like=${search}`,
           { method: "GET" }
         );
 

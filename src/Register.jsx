@@ -116,24 +116,21 @@ export default function Register(props) {
     validate();
 
     if (isValid()) {
-      let response = await fetch(
-        "https://api.npoint.io/2210873b5c32eb592634/users",
-        {
-          method: "POST",
-          body: JSON.stringify({
-            email: state.email,
-            password: state.password,
-            fullName: state.fullName,
-            dateOfBirth: state.dateOfBirth,
-            gender: state.gender,
-            country: state.country,
-            role: "user",
-          }),
-          headers: {
-            "Content-type": "application/json",
-          },
-        }
-      );
+      let response = await fetch("http://localhost:5000/users", {
+        method: "POST",
+        body: JSON.stringify({
+          email: state.email,
+          password: state.password,
+          fullName: state.fullName,
+          dateOfBirth: state.dateOfBirth,
+          gender: state.gender,
+          country: state.country,
+          role: "user",
+        }),
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
       if (response.ok) {
         let responseBody = await response.json();
         userContext.setUser({

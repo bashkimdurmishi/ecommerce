@@ -12,28 +12,25 @@ export const OrdersService = {
   },
 
   fetchProducts: () => {
-    return fetch("https://api.npoint.io/2210873b5c32eb592634/products", {
+    return fetch("http://localhost:5000/products", {
       method: "GET",
     });
   },
 
   fetchOrdersByUserId: (userId) => {
-    return fetch(
-      `https://api.npoint.io/2210873b5c32eb592634/orders?userId=${userId}`,
-      {
-        method: "GET",
-      }
-    );
+    return fetch(`http://localhost:5000/orders?userId=${userId}`, {
+      method: "GET",
+    });
   },
 
   fetchBrands: () => {
-    return fetch(`https://api.npoint.io/2210873b5c32eb592634/brands`, {
+    return fetch(`https://localhost:5000/brands`, {
       method: "GET",
     });
   },
 
   fetchCategories: () => {
-    return fetch(`https://api.npoint.io/2210873b5c32eb592634/categories`, {
+    return fetch(`http://localhost:5000/categories`, {
       method: "GET",
     });
   },

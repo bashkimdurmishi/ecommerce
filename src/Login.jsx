@@ -69,7 +69,7 @@ export default function Login(props) {
     if (isValid) {
       //get user from DB using credentials
       let response = await fetch(
-        `https://api.npoint.io/2210873b5c32eb592634/users?email=${email}&password=${password}`,
+        `http://localhost:5000/users?email=${email}&password=${password}`,
         { method: "GET" }
       );
 
